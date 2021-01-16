@@ -1,11 +1,15 @@
 <template>
-  <p>
-    <slot/>
+  <p v-if="type === 'text'">
+    {{ value }}
   </p>
 </template>
 
 <script>
 export default {
-  name: 'AppCardText'
+  name: 'AppCardText',
+  props: {
+    value: String,
+    type: String
+  }
 }
 </script>

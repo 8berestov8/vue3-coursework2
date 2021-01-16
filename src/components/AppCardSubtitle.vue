@@ -1,12 +1,16 @@
 <template>
-  <h2>
-    <slot/>
+  <h2 v-if="type === 'subtitle'">
+    {{ value }}
   </h2>
 </template>
 
 <script>
 export default {
-  name: 'AppCardSubtitle'
+  name: 'AppCardSubtitle',
+  props: {
+    value: String,
+    type: String
+  }
 }
 </script>
 

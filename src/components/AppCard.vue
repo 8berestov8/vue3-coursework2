@@ -7,16 +7,12 @@
       :key="item.id"
       v-if="!isVisibleText"
     >
-      
-      <app-card-title v-if="item.type == 'title'">{{ item.value }}</app-card-title>
-      
-      <app-card-avatar v-if="item.type == 'avatar'">
-        <img :src="item.value "/>
-      </app-card-avatar>
-      
-      <app-card-subtitle v-if="item.type == 'subtitle'">{{ item.value }}</app-card-subtitle>
-      
-      <app-card-text v-if="item.type == 'text'">{{ item.value }}</app-card-text>
+  
+      <component
+        :is="'app-card-'+item.type"
+        :value="item.value"
+        :type="item.type"
+      ></component>
     </div>
     
     <h3 v-if="isVisibleText">Добавьте первый блок, чтобы увидеть результат</h3>
