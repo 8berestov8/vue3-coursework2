@@ -45,6 +45,7 @@ export default {
         select
       })
       this.value = ''
+      this.selected = 'title'
     }
     
   },
